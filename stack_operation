@@ -1,0 +1,88 @@
+import java.util.Scanner;
+class Stack{
+int top;
+int s[]=new int[10];
+
+Stack(){
+
+top=-1;
+}
+void push(int item){
+if(s.length-1==top){
+
+System.out.println("Stack over folw");
+
+return;
+}
+else{
+
+top+=1;
+s[top]=item;
+}
+}
+void pop(){
+if(top== -1){
+
+System.out.println("Stack underflow");
+
+return;
+}
+else{
+
+int item=s[top];
+
+System.out.println("item deleted popped :"+item);
+
+top-=1;
+}
+}
+void display(){
+if(top== -1){
+
+System.out.println("Stack is empty, no item to display");
+
+}
+else{
+System.out.println("Item in stack are:");
+for(int i=top;i>=0;i--){
+System.out.println(s[i]);
+
+}
+}
+}
+
+}
+public class Prg2 {
+
+public static void main(String[] args) {
+int ch;
+Stack stk=new Stack();
+Scanner in=new Scanner(System.in);
+while(true){
+` System.out.println("Stack operation demo");
+
+System.out.println("Enter 1:push,2:pop,3:display item,4:exit");
+ch=in.nextInt();
+switch(ch){
+case 1:
+
+System.out.println("Enter the item to be pushed into
+stack");
+
+int item=in.nextInt();
+stk.push(item);
+break;
+case 2:stk.pop();
+break;
+case 3:
+
+stk.display();
+break;
+case 4:System.exit(0);
+
+default:System.out.println("enter the valid choice");
+
+}
+}
+}
+}
