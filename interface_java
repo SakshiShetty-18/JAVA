@@ -1,0 +1,44 @@
+interface Resizable {
+void resizeWidth(int width);
+void resizeHeight(int height);
+}
+
+// Rectangle class implements the interface
+class Rectangle implements Resizable {
+private int width;
+private int height;
+
+public Rectangle(int width, int height) {
+this.width = width;
+this.height = height;
+}
+
+// Implement the interface methods
+@Override
+public void resizeWidth(int width) {
+this.width = width;
+}
+
+@Override
+public void resizeHeight(int height) {
+this.height = height;
+}
+
+public void display() {
+System.out.println("Rectangle width: " + width + ", height: " + height);
+}
+}
+
+// Test class with main() method
+public class TestResizable {
+public static void main(String[] args) {
+Rectangle rectangle = new Rectangle(5, 10);
+System.out.println("Original rectangle:");
+rectangle.display();
+
+rectangle.resizeWidth(8);
+rectangle.resizeHeight(12);
+System.out.println("Resized rectangle:");
+rectangle.display();
+}
+}
