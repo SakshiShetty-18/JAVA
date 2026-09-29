@@ -1,0 +1,31 @@
+// Online Java Compiler (Editor)
+// Write and run Java online using this editor.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        int index=-1;
+     Scanner sc=new Scanner(System.in) ; 
+        System.out.println("enter size of array:");
+        int n=sc.nextInt();
+          int[]a=new int[n];
+        System.out.println("enter elements of array:");
+        for(int i=0;i<a.length;i++){
+            a[i]=sc.nextInt();
+        }
+          System.out.println("enter the element to find:");
+        int ele=sc.nextInt();
+            for(int i=0;i<a.length;i++){
+                if(a[i]==ele){
+                  index=i;
+                    break;
+                }
+            }
+                if(index!=-1){
+                        System.out.println("element found at:"+index);
+                }
+                else{
+                        System.out.println("element  not found");
+                }
+            
+    }
+}
